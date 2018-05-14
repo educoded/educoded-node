@@ -3,6 +3,7 @@ requirejs.config({
     paths: {
         // libraries
         jQuery: 'libs/jquery.min',
+        angular: 'libs/angular.min',
         ace: 'libs/ace/ace',
         charts: 'libs/charts.min',
         cropper: 'libs/cropper.min',
