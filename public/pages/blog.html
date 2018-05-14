@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html>
+	<head>
+
+		<!-- Main CSS -->
+		<link rel="stylesheet" type="text/css" href="../src/css/frontend/main.css">
+
+		<!-- RequireJS -->
+		<script src="../src/js/frontend/require.js"></script>
+
+	</head>
+	<body class="edx-app edx-25">
+
+		<style>
+
+			.edx-blog-posts {
+			    padding: 15px;
+			    align-items: flex-start;
+			}
+
+			.edx-blog-posts-cover {
+			    width: 100%;
+			    height: 40vh;
+			    position: relative;
+			    overflow: hidden;
+			}
+
+			.edx-blog-posts-overlay {
+			    position: absolute;
+			    width: 100%;
+			    background: rgba(255,255,255,0.25);
+			}
+
+			.edx-blog-posts-cover-info {
+				display: none;
+			    position: absolute;
+			    top: 20px;
+			    left: 20px;
+			}
+
+			.edx-blog-posts-cover-title {
+			    padding: 5px 10px;
+			    background: #fff;
+			    font-size: 13px;
+			    font-weight: 800;
+			    text-transform: uppercase;
+			    letter-spacing: 1px;
+			}
+
+			.edx-blog-posts-cover-author {
+			    background: #000;
+			    color: #fff;
+			    padding: 3px 6px;
+			    font-size: 10px;
+			    text-transform: capitalize;
+			    margin-top: 4px;
+			    display: inline-flex;
+			}
+
+			.edx-blog-posts-content {
+			    padding: 20px;
+			}
+
+			.edx-blog-posts-title {
+			    font-size: 26px;
+			    font-weight: 800;
+			    margin-bottom: 5px;
+			}
+
+			.edx-blog-posts-author {
+				display: none;
+			    font-size: 13px;
+			    font-weight: 400;
+			    margin-bottom: 2px;
+			}
+
+			.edx-blog-posts-created {
+			    font-size: 11px;
+			    font-weight: 300;
+			}
+
+			.edx-blog-posts-text {
+			    font-weight: 300;
+			    line-height: 22px;
+			    font-size: 14px;
+			    margin: 30px 0px;
+			}
+
+			.edx-blog-posts-btn {
+				width: 125px;
+				height: 40px;
+				background: #000;
+				color: #fff;
+				text-transform: uppercase;
+				font-size: 12px;
+				font-weight: 800;
+				letter-spacing: 1px;
+			}
+
+			.edx-blog-posts-break {
+			    width: 100%;
+			    height: 1px;
+			    margin: 20px 0px;
+			    background: rgba(20,20,20,0.15);
+			}
+
+		</style>
+		
+		<script>
+			requirejs(['../src/js/frontend/config'],function(){
+				requirejs(['localforage','jQuery','AES','MD5','api','app','user','page','blog'],
+				function (localforage) {
+					var api = new API(), app = new App(), user = new User(), page = new Page(), blog = new Blog();
+					window.localforage = localforage;
+					app.init();
+					user.init();
+					page.init({'name':'blog','side':'','layout':['cover','full']});
+					blog.init();
+				})
+			});
+		</script>
+
+	</body>
+</html>

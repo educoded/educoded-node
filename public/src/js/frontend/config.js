@@ -1,0 +1,42 @@
+requirejs.config({
+    baseUrl: '../src/js/frontend/',
+    paths: {
+        // libraries
+        jQuery: 'libs/jquery.min',
+        ace: 'libs/ace/ace',
+        charts: 'libs/charts.min',
+        cropper: 'libs/cropper.min',
+        localforage: 'libs/localforage',
+        moment: 'libs/moment.min',
+        progress: 'libs/progressbar.min',
+        signature: 'libs/signature.min',
+        particle: 'libs/particles.min',
+        geocomplete: 'libs/geocomplete',
+        youtube: 'libs/youtube',
+        owl: 'libs/owl',
+        // cryptoJS
+        AES: 'libs/cryptoJS/aes',
+        MD5: 'libs/cryptoJS/md5',
+        // controller
+        app: 'controller/app',
+        // core
+        api: 'controller/core/api',
+        cart: 'controller/core/cart',
+        db: 'controller/core/db',
+        editor: 'controller/core/editor',
+        storage: 'controller/core/storage',
+        user: 'controller/core/user',
+        // default
+        main: 'main',
+        // pages
+        about: 'controller/pages/about',
+        blog: 'controller/pages/blog',
+        course: 'controller/pages/course',
+        courses: 'controller/pages/courses',
+        home: 'controller/pages/home',
+        page: 'controller/pages/page',
+        post: 'controller/pages/post',
+        register: 'controller/pages/register',
+        team: 'controller/pages/team',
+    }
+});

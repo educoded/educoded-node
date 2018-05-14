@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+	<head>
+
+		<!-- Main CSS -->
+		<link rel="stylesheet" type="text/css" href="../src/css/frontend/main.css">
+
+		<!-- RequireJS -->
+		<script src="../src/js/frontend/require.js"></script>
+
+	</head>
+	<body class="edx-app edx-25">
+
+		<script>
+			requirejs(['../src/js/frontend/config'],function(){
+				requirejs(['localforage','jQuery','AES','MD5','api','app','user','page','courses'],
+				function (localforage) {
+					var api = new API(), app = new App(), user = new User(), page = new Page(), courses = new Courses();
+					window.localforage = localforage;
+					app.init();
+					user.init();
+					page.init({'name':'course','side':'left','layout':['cover','sidebar','toolbar','grid']});
+					courses.init();
+				})
+			});
+		</script>
+
+	</body>
+</html>
